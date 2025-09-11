@@ -96,7 +96,7 @@ def get_scatter_chart(entered_site, entered_payload_range):
         # Filter on only the selected site
         filtered_df = spacex_df[(spacex_df['Payload Mass (kg)'] >= low) & (spacex_df['Payload Mass (kg)'] <= high) & (spacex_df['Launch Site'] == entered_site)]
         fig = px.scatter(filtered_df, x="Payload Mass (kg)", y="class", color="Booster Version Category", 
-                    title='Correlation between Payload and Success for all sites')
+                    title='Correlation between Payload and Success for site {entered_site}')
         return fig
     
 
